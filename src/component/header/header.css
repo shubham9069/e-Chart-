@@ -1,0 +1,26 @@
+
+
+a{
+   all:unset                /* for remove all property of Link a  */
+}
+.header{
+    display: block;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,194,255,1) 100%);
+text-align: center;
+color: white;
+font-family: 'Teko', sans-serif;
+font-size:1.5rem;
+cursor:pointer;
+
+}
+.header h1{
+    margin:0 !important;
+    font-weight: 400;
+    text-decoration: none;
+}
+.header p{
+    margin:0 !important;
+    
+}
+
