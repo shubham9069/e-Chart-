@@ -10,35 +10,39 @@ const Barchart = () => {
     var item =data[index].Alcohol               // its give the array  arrmallic which contain all alcohol into wine data include alcohol 1,2,3
     arrmalic.push(item)                         // bute there is also a duplicase of data we will remove 
   })
-
-
-
-  var sum1=0;
-  var count1=1; 
-  var sum2=0;
-  var count2=1  
-  var sum3=0;
-  var count3=1;        // its containe only alc1holic 3 malic acid data 
-  
-  data.forEach((element,index)=>{
-   
-    if(data[index].Alcohol === 1){                      
-      sum1 = data[index].Malic_Acid+sum1;
-      count1++                                              // its only push alcoholic =1 element into marr1
-       }    
-
-    else if(data[index].Alcohol === 2){
-      sum2 = data[index].Malic_Acid+sum2;  
-      count2++                                                       // its only push alcoholic =2 element into marr2
-    }
-
-    else if(data[index].Alcohol === 3){
-      sum3 = data[index].Malic_Acid+sum3;  
-      count3++                                                    // // its only push alcoholic =3 element into marr3
-    }
-
+  var arr = arrmalic.filter((element,index)=>{                  // its remove duplicase of a array 
+    return arrmalic.indexOf(element) === index                  // in this methode i am bit confuse so i have to go throught this methode on internet 
+    
   })
+
+
+
+  var avgarr=[]               // gives avg of malic acid 
   
+  var sum=0;
+  var count=1
+  
+          // its containe only alc1holic 3 malic acid data 
+  
+  arr.forEach((elementA,indexA)=>{        // lop for alcholo expected result 1,2,3, 
+    data.forEach((element,index)=>{
+      
+      if(data[index].Alcohol === elementA){                      
+        sum= data[index].Malic_Acid+sum
+        count++                                              // its only push alcoholic =1 element into marr1
+         }    
+  
+  
+    })
+    var avg=sum/count
+    avgarr.push(avg);
+    
+    sum=0;                  
+    count=0
+    
+  })
+
+  console.log(avgarr)
 
   function b(){
     var chartDom = document.getElementById('main');
@@ -47,10 +51,7 @@ var option;
 
 option = {
   xAxis: {
-    data: arrmalic.filter((element,index)=>{                  // its remove duplicase of a array 
-      return arrmalic.indexOf(element) === index                  // in this methode i am bit confuse so i have to go throught this methode on internet 
-      
-    }),
+    data: arr,
     type: 'category',
     name: 'alchole',                  // axis name or lables 
     position: 'left',
@@ -74,7 +75,9 @@ option = {
   },
   series: [
     {
-      data: [sum1/count1,sum2/count2,sum3/count3],      // avg of malic acid 
+      data: avgarr,
+       
+    // avg of malic acid 
       type: 'bar',
       color: "#888888",
       showBackground: true,
