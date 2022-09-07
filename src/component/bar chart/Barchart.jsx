@@ -13,56 +13,32 @@ const Barchart = () => {
 
 
 
-  var marr1=[];          // its containe only alc1holic 1 malic acid data 
-  var marr2=[];             // its containe only alc1holic 3 malic acid data 
-  var marr3=[]                // its containe only alc1holic 3 malic acid data 
+  var sum1=0;
+  var count1=1; 
+  var sum2=0;
+  var count2=1  
+  var sum3=0;
+  var count3=1;        // its containe only alc1holic 3 malic acid data 
   
   data.forEach((element,index)=>{
+   
     if(data[index].Alcohol === 1){                      
-      marr1.push(data[index].Malic_Acid)                     // its only push alcoholic =1 element into marr1
+      sum1 = data[index].Malic_Acid+sum1;
+      count1++                                              // its only push alcoholic =1 element into marr1
        }    
 
     else if(data[index].Alcohol === 2){
-      marr2.push(data[index].Malic_Acid)                     // its only push alcoholic =2 element into marr2
+      sum2 = data[index].Malic_Acid+sum2;  
+      count2++                                                       // its only push alcoholic =2 element into marr2
     }
 
     else if(data[index].Alcohol === 3){
-      marr3.push(data[index].Malic_Acid)                      // // its only push alcoholic =3 element into marr3
+      sum3 = data[index].Malic_Acid+sum3;  
+      count3++                                                    // // its only push alcoholic =3 element into marr3
     }
 
   })
-  // console.log(marr1)
-
-  var sum1=0;
-  var count1=1;
-  marr1.forEach((element,index)=>{            //its for malic acid of alcohol 1 
-     sum1 = element+sum1;                   
-     count1++                                 // sum1 =its give sum of all eklement in array 
-  }  )                                        // count1 will give how many element in array 
   
-
-
-
-
-  var sum2=0;
-  var count2=1
-  marr2.forEach((element,index)=>{                //its for malic acid of alcohol 2
-     sum2 = element+sum2;
-     count2++
-     
-  }  )
-
-
-
-
-  var sum3=0;
-  var count3=1;
-  marr3.forEach((element,index)=>{              //its for malic acid of alcohol 3
-     sum3 = element+sum3;
-     count3++
-     
-  }  )
-
 
   function b(){
     var chartDom = document.getElementById('main');
