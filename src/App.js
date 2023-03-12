@@ -6,9 +6,9 @@ const App = () => {
     <>
     <Header/>
     <Routes>
-    <Route path="/" element={<Home/>}/>
+    <Route path="/react_echart" element={<Home/>}/>
     <Route path="/Sgraph" element={<Scatteredplot/>}/>
-    <Route path="Bgraph" element={<Barchart/>}/>
+    <Route path="/Bgraph" element={<Barchart/>}/>
 
 
     </Routes>

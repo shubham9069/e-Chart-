@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react_echart/static/css/main.9788c5cb.css",
+    "main.js": "/react_echart/static/js/main.2a462ee4.js",
+    "index.html": "/react_echart/index.html",
+    "main.9788c5cb.css.map": "/react_echart/static/css/main.9788c5cb.css.map",
+    "main.2a462ee4.js.map": "/react_echart/static/js/main.2a462ee4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9788c5cb.css",
+    "static/js/main.2a462ee4.js"
+  ]
+}

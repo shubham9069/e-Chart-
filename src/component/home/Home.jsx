@@ -16,7 +16,7 @@ const Home = () => {
   <p> coloured intensity vs hue </p>
 </div>
 </Link>
-<Link to="Bgraph">
+<Link to="/Bgraph">
 <div className="container-right-box">
   <h3>bar chart </h3>
   <p>alchole vs avg malic acid  </p>
